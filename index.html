@@ -133,7 +133,8 @@
 
     <script>
         const resumeData = {
-            summary: "Beyond my work in data, I'm driven by a deep sense of curiosity and a passion for continuous learning. I love diving into complex problems, whether it's optimizing a data pipeline  or solving a complex Sudoku puzzle. In my free time, you'll often find me exploring new places, or hiking in the mountains. I believe that the best solutions come from collaboration and a shared enthusiasm for discovery. I am always excited to connect with other professionals and learn from their experiences. My personal philosophy is that every challenge is an opportunity to grow and innovate, and I bring that mindset to both my personal and professional pursuits.",
+            summary : "Data Engineer with 5+ years of experience designing and scaling batch and streaming pipelines in cloud and distributed environments. Skilled in SQL, Python, PySpark, Databricks, and Airflow, with proven ability to build high-quality data products that power marketing, experimentation, and analytics use cases. Experienced in ensuring data quality, observability, and reliability for large-scale customer and business datasets.",
+            personal_summary: "Beyond my work in data, I'm driven by a deep sense of curiosity and a passion for continuous learning. I love diving into complex problems, whether it's optimizing a data pipeline  or solving a complex Sudoku puzzle. In my free time, you'll often find me exploring new places, or hiking in the mountains. I believe that the best solutions come from collaboration and a shared enthusiasm for discovery. I am always excited to connect with other professionals and learn from their experiences. My personal philosophy is that every challenge is an opportunity to grow and innovate, and I bring that mindset to both my personal and professional pursuits.",
             experience: [
                 {
                     company: "Myntra",
@@ -252,7 +253,7 @@
             const aboutContainer = document.getElementById('about-container');
             const summaryHTML = `
                 <div class="card p-6 md:p-8">
-                    <p class="text-slate-600 leading-relaxed">${resumeData.summary}</p>
+                    <p class="text-slate-600 leading-relaxed">${resumeData.personal_summary}</p>
                 </div>
             `;
             const experienceHTML = resumeData.experience.map((job, index) => `
