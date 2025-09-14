@@ -49,6 +49,15 @@
         .nav-link.active::after {
             width: 100%;
         }
+        .hidden-details {
+            display: none;
+        }
+        .toggle-btn {
+            transition: transform 0.3s ease;
+        }
+        .toggle-btn.rotated {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-700">
@@ -63,7 +72,7 @@
             </a>
             <div class="flex space-x-6 md:space-x-12">
                 <a href="#home" class="nav-link text-lg font-medium text-slate-600 hover:text-emerald-500">Home</a>
-                <a href="#experience" class="nav-link text-lg font-medium text-slate-600 hover:text-emerald-500">Experience</a>
+                <a href="#about" class="nav-link text-lg font-medium text-slate-600 hover:text-emerald-500">About Me</a>
                 <a href="#skills" class="nav-link text-lg font-medium text-slate-600 hover:text-emerald-500">Skills</a>
                 <a href="#projects" class="nav-link text-lg font-medium text-slate-600 hover:text-emerald-500">Projects</a>
             </div>
@@ -84,7 +93,7 @@
                     </span>
                 </div>
                 <div class="mt-6 flex justify-center space-x-6">
-                    <a  href="https://www.linkedin.com/in/paridhi-paliwal-263174141/" class="flex items-center text-slate-500 hover:text-emerald-500 transition-colors">
+                    <a href="https://www.linkedin.com/in/paridhi-paliwal-263174141/" class="flex items-center text-slate-500 hover:text-emerald-500 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.765s.784-1.765 1.75-1.765 1.75.79 1.75 1.765-.783 1.765-1.75 1.765zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
                         LinkedIn
                     </a>
@@ -97,10 +106,10 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-emerald-500 mb-8 text-center">Experience</h2>
-            <div id="experience-container" class="space-y-8"></div>
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-emerald-500 mb-8 text-center">About Me</h2>
+            <div id="about-container" class="space-y-8"></div>
         </section>
 
         <!-- Skills Section -->
@@ -135,7 +144,8 @@
                         "Developed automated Root Cause Analysis (RCA) pipelines for key business metrics (GMV, retention), reducing manual analysis time by over 70%.",
                         "Implemented robust data validation and alerting systems to proactively monitor pipeline health and ensure data quality for downstream analytics.",
                         "Streamlined recurring data workflows for inventory and marketing, improving dashboard refresh times by 90% and providing teams with near real-time visibility.",
-                        "Collaborated with cross-functional teams to transform business requirements into structured datasets, supporting critical growth and marketing initiatives."
+                        "Collaborated with cross-functional teams to transform business requirements into structured datasets, supporting critical growth and marketing initiatives.",
+                        "Resolved production issues and optimized dashboard logic, significantly improving pipeline uptime and reducing dependency on engineering teams."
                     ]
                 },
                 {
@@ -148,13 +158,6 @@
                         "Built and deployed NLP pipelines for category allocation and attribute extraction, improving classification accuracy and reducing manual tagging.",
                         "Developed BI dashboards (Power BI, Plotly) for performance tracking, enabling business teams to monitor product, pricing, and sales metrics in real time.",
                         "Implemented GitHub CI/CD workflows to automate deployment, maintain version control, and ensure stability in production environments."
-                    ]
-                },
-                {
-                    company: "IndiGo Airlines (InterGlobe Aviation Ltd)",
-                    duration: "2019-2020",
-                    description: [
-                        "Managed and streamlined large-scale operational data for aircraft maintenance projects, improving scheduling efficiency and compliance tracking."
                     ]
                 }
             ],
@@ -171,14 +174,17 @@
                 }
             ],
             skills: [
-
+                {
+                    category: "Data Engineering & ETL",
+                    list: "Databricks, ETL Pipelines, Data Lakes, PySpark, SparkSQL"
+                },
                 {
                     category: "Programming & Big Data",
-                    list: "Python, Java, Scala, SQL (Presto), PySpark, SparkSQL, Hadoop"
+                    list: "Python, Java, Scala, SQL (Presto), Hadoop, Pandas"
                 },
                 {
                     category: "Data Analytics & Visualization",
-                    list: "Power BI, Tableau(familiar),Plotly, Seaborn, Excel"
+                    list: "Power BI, Plotly, Seaborn, Excel"
                 },
                 {
                     category: "Orchestration & Streaming",
@@ -203,16 +209,16 @@
                     description: "Designed and deployed SQL (Presto, Hive) and Python-based ETL pipelines to process and visualize competitor pricing data. Automated daily updates into Power BI dashboards, reducing refresh time by 90% and improving pricing decision turnaround."
                 },
                 {
-                    title: "Taxonomy Prediction and Standardization (LLM-based)",
-                    description: "Automatically categorize and standardize product taxonomy across various e-commerce platforms to ensure data consistency for unified insights and market analysis."
-                },
-                {
                     title: "Data Quality Monitoring Framework",
                     description: "Built automated validation scripts and alerting system in Python and SQL to monitor pipeline health and detect anomalies in high-volume sales datasets, reducing manual QA by 70%."
                 },
                 {
                     title: "NLP based Chatbot for industrial Safety Prediction",
                     description: "Designed a natural language processing (NLP) based chatbot to predict and provide guidance on industrial safety incidents, improving workplace safety measures."
+                },
+                 {
+                    title: "Taxonomy Prediction and Standardization (LLM-based)",
+                    description: "Automatically categorize and standardize product taxonomy across various e-commerce platforms to ensure data consistency for unified insights and market analysis."
                 }
             ]
         };
@@ -235,21 +241,33 @@
             // Render Summary
             document.getElementById('summary').textContent = resumeData.summary;
 
-            // Render Experience
-            const experienceContainer = document.getElementById('experience-container');
-            experienceContainer.innerHTML = resumeData.experience.map(job => `
+            // Render About Me section
+            const aboutContainer = document.getElementById('about-container');
+            const summaryHTML = `
                 <div class="card p-6 md:p-8">
-                    <div class="flex justify-between items-start mb-2">
+                    <p class="text-slate-600 leading-relaxed">${resumeData.summary}</p>
+                </div>
+            `;
+            const experienceHTML = resumeData.experience.map((job, index) => `
+                <div class="card p-6 md:p-8">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleDetails('job-details-${index}')">
                         <div>
                             <h3 class="text-xl font-bold text-emerald-500">${job.company}</h3>
+                            <span class="text-sm font-medium text-slate-500">${job.duration}</span>
                         </div>
-                        <span class="text-sm font-medium text-slate-500">${job.duration}</span>
+                        <svg class="h-6 w-6 text-slate-400 toggle-btn" id="toggle-icon-${index}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
                     </div>
-                    <ul class="list-disc list-inside space-y-2 text-slate-600">
-                        ${job.description.map(point => `<li>${point}</li>`).join('')}
-                    </ul>
+                    <div id="job-details-${index}" class="mt-4 hidden-details">
+                        <ul class="list-disc list-inside space-y-2 text-slate-600">
+                            ${job.description.map(point => `<li>${point}</li>`).join('')}
+                        </ul>
+                    </div>
                 </div>
             `).join('');
+
+            aboutContainer.innerHTML = summaryHTML + experienceHTML;
 
             // Render Skills & Academics
             const skillsContainer = document.getElementById('skills-container');
@@ -290,6 +308,18 @@
                     <p class="text-slate-600">${project.description}</p>
                 </div>
             `).join('');
+        };
+
+        const toggleDetails = (id) => {
+            const detailsElement = document.getElementById(id);
+            const toggleBtn = document.getElementById(`toggle-icon-${id.split('-')[2]}`);
+            if (detailsElement.classList.contains('hidden-details')) {
+                detailsElement.classList.remove('hidden-details');
+                toggleBtn.classList.add('rotated');
+            } else {
+                detailsElement.classList.add('hidden-details');
+                toggleBtn.classList.remove('rotated');
+            }
         };
 
         window.onload = () => {
